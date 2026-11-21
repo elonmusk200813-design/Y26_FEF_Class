@@ -1,0 +1,40 @@
+{
+    margin:100;
+    paddding:200;
+    <box-size>:border-box;
+}
+ h1 {
+    color:red;
+
+ }
+ <h2>2. Class Selector</h2>
+ 
+ h1,h2,p{
+    color:purple;
+    font-family:Arial;
+ }
+
+ <div>
+ <p>Welcome</p>
+ <section>
+ <p>Hello Students</p>
+ </section>
+ </div>
+ div p{
+    color:burgundy;
+ }
+
+ <div>
+ <p>Direct Child</p>
+ <section> 
+
+ <h2>Heading</h2>
+ <p>first paraghraph</p>
+ <p>second paragraph</p>
+ h2+p{
+    color:burgundy;
+ }
+
+ input[type="text] {
+ background-color:lightyellow;
+}

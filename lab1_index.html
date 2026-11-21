@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="City Care Hospital - Patient Appointment Management and Medical Services">
+  <title>City Care Hospital | Patient Appointment Portal</title>
+  <style>
+
+    :root {
+      --primary: #005a9c;
+      --bg: #f8fafc;
+      --text: #1e293b;
+      --error: #b91c1c;
+    }
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      background: var(--bg);
+      margin: 0;
+    }
+   
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: var(--primary);
+      color: #fff;
+      padding: 8px 16px;
+      z-index: 100;
+      text-decoration: none;
+    }
+    .skip-link:focus {
+      top: 0;
+    }
+  
+    a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+      outline: 3px solid #f59e0b;
+      outline-offset: 2px;
+    }
+    header, main, footer {
+      max-width: 960px;
+      margin: auto;
+      padding: 1.5rem;
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      gap: 1.5rem;
+    }
+    fieldset {
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      padding: 1.25rem;
+      margin-bottom: 1.5rem;
+      background: #fff;
+    }
+    legend {
+      font-weight: 700;
+      padding: 0 0.5rem;
+    }
+    .form-group {
+      margin-bottom: 1rem;
+      display: flex;
+      flex-direction: column;
+    }
+    label {
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+    input, select, textarea {
+      padding: 0.6rem;
+      font-size: 1rem;
+      border: 1px solid #64748b;
+      border-radius: 4px;
+    }
+    .hint {
+      font-size: 0.875rem;
+      color: #475569;
+    }
+    button[type="submit"] {
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+
+  <header>
+    <h1>City Care Multi-Specialty Hospital</h1>
+    <p>Compassionate Care &amp; Digital Patient Services</p>
+    <nav aria-label="Primary Navigation">
+      <ul>
+        <li><a href="#services">Medical Services</a></li>
+        <li><a href="#doctors">Our Specialists</a></li>
+        <li><a href="#appointment">Book Appointment</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+  <main id="main-content">
+    
+    
+    <section id="services" aria-labelledby="services-heading">
+      <h2 id="services-heading">Hospital Services</h2>
+      <ul>
+        <li>
+          <h3>24/7 Emergency &amp; Trauma Care</h3>
+          <p>Immediate critical care support with advanced life-support ambulances.</p>
+        </li>
+        <li>
+          <h3>Cardiology &amp; Heart Health</h3>
+          <p>Non-invasive diagnostics, ECG, echocardiography, and interventional cardiology.</p>
+        </li>
+        <li>
+          <h3>Diagnostic Laboratory &amp; Imaging</h3>
+          <p>Digital X-Ray, MRI, CT scans, and automated pathology services.</p>
+        </li>
+      </ul>
+    </section>
+
+
+    <section id="doctors" aria-labelledby="doctors-heading">
+      <h2 id="doctors-heading">Our Medical Specialists</h2>
+      
+      <article aria-labelledby="doc-1">
+        <h3 id="doc-1">Dr. Ananya Sharma, MD</h3>
+        <p><strong>Department:</strong> Cardiology</p>
+        <p><strong>Availability:</strong> Monday – Friday, 9:00 AM – 2:00 PM</p>
+      </article>
+
+      <article aria-labelledby="doc-2">
+        <h3 id="doc-2">Dr. Rajesh Verma, MS</h3>
+        <p><strong>Department:</strong> Orthopedics</p>
+        <p><strong>Availability:</strong> Tuesday – Saturday, 11:00 AM – 4:00 PM</p>
+      </article>
+    </section>
+
+
+    <section id="appointment" aria-labelledby="appointment-heading">
+      <h2 id="appointment-heading">Book a Patient Appointment</h2>
+      <p id="form-instructions">Fields marked with an asterisk (<span aria-hidden="true">*</span>) are required.</p>
+
+      <form action="/submit-appointment" method="POST" aria-describedby="form-instructions">
+        
+
+        <fieldset>
+          <legend>Patient Information</legend>
+
+          <div class="form-group">
+            <label for="patient-name">Full Name <span aria-hidden="true">*</span></label>
+            <input 
+              type="text" 
+              id="patient-name" 
+              name="patientName" 
+              autocomplete="name" 
+              required 
+              aria-required="true"
+              minlength="2"
+              placeholder="e.g., Rohan Kumar">
+          </div>
+
+          <div class="form-group">
+            <label for="patient-email">Email Address <span aria-hidden="true">*</span></label>
+            <input 
+              type="email" 
+              id="patient-email" 
+              name="patientEmail" 
+              autocomplete="email" 
+              required 
+              aria-required="true"
+              placeholder="rohan@example.com">
+          </div>
+
+          <div class="form-group">
+            <label for="patient-phone">Phone Number <span aria-hidden="true">*</span></label>
+            <input 
+              type="tel" 
+              id="patient-phone" 
+              name="patientPhone" 
+              autocomplete="tel" 
+              pattern="[0-9]{10}" 
+              required 
+              aria-required="true"
+              aria-describedby="phone-hint"
+              placeholder="9876543210">
+            <span id="phone-hint" class="hint">Enter a 10-digit mobile number without spaces or dashes.</span>
+          </div>
+
+          <div class="form-group">
+            <label for="patient-dob">Date of Birth <span aria-hidden="true">*</span></label>
+            <input 
+              type="date" 
+              id="patient-dob" 
+              name="patientDob" 
+              autocomplete="bday" 
+              required 
+              aria-required="true">
+          </div>
+        </fieldset>
+
+       
+        <fieldset>
+          <legend>Appointment Details</legend>
+
+          <div class="form-group">
+            <label for="department">Select Department <span aria-hidden="true">*</span></label>
+            <select id="department" name="department" required aria-required="true">
+              <option value="">-- Choose a Department --</option>
+              <option value="cardiology">Cardiology</option>
+              <option value="orthopedics">Orthopedics</option>
+              <option value="general">General Medicine</option>
+              <option value="diagnostics">Diagnostics</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="preferred-date">Preferred Appointment Date <span aria-hidden="true">*</span></label>
+            <input 
+              type="date" 
+              id="preferred-date" 
+              name="preferredDate" 
+              min="2026-11-20" 
+              required 
+              aria-required="true">
+          </div>
+
+          <div class="form-group">
+            <label for="symptoms">Reason for Visit / Symptoms</label>
+            <textarea 
+              id="symptoms" 
+              name="symptoms" 
+              rows="4" 
+              placeholder="Briefly describe your symptoms or consultation needs"></textarea>
+          </div>
+        </fieldset>
+
+        <button type="submit">Confirm Appointment</button>
+      </form>
+    </section>
+
+  </main>
+
+
+  <footer>
+    <p>&copy; 2026 City Care Multi-Specialty Hospital. Emergency Helpline: <a href="tel:+911800123456">1800-123-456</a></p>
+  </footer>
+</body>
+</html>

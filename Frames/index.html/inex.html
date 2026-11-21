@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Menu and Content Layout</title>
+
+<style>
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        font-family:Arial, sans-serif;
+    }
+
+    .container{
+        display:flex;
+        height:100vh;
+    }
+
+    .menu{
+        width:25%;
+        background-color:rgb(55, 55, 82);
+        color:white;
+        padding:20px;
+    }
+
+    .content{
+        width:75%;
+        background-color:rgb(77, 88, 77);
+        color:white;
+        padding:20px;
+    }
+
+    h1{
+        text-align:center;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    
+    <div class="menu">
+        <h2>MENU</h2>
+        <p>Home</p>
+        <p>About</p>    
+        <p>Contact</p>
+    </div>
+
+    <div class="content">
+        <h1>Content</h1>
+        <p>Welcome</p>
+    </div>
+
+</div>
+
+</body>
+</html>
